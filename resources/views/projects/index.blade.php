@@ -1,14 +1,12 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Projects</h1>
+
+@extends('layout')
+
+@section('content')
+
+    <p style="margin-top: 20px">
+        <a href="/projects/create" class="button is-link">Create project</a>
+    </p>
+    <h1 style="margin: 20px 0; font-size: 20px">All Projects</h1>
     <ul>
         @foreach ($projects as $project)
             <li>
@@ -18,5 +16,5 @@
             </li>
         @endforeach
     </ul>
-</body>
-</html>
+
+@endsection

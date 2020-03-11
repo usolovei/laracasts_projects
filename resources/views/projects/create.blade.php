@@ -1,31 +1,39 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Create a New Project</h1>
+@extends('layout')
 
-    <form method="POST" action="/projects">
+@section('content')
+
+    <p>
+        <a href="/projects">List all projects</a>
+    </p>
+    <h1 style="margin: 20px 0; font-size: 20px"> Create a New Project</h1>
+
+    <form method="POST" action="/projects" style="margin-bottom: 1em;">
 
         {{csrf_field()}}
 
-        <div>
-            <input type="text" name="title" placeholder="Project title">
+        <div class="field">
+            <label class="label" for="title">Title</label>
+
+            <div class="control">
+                <input type="text" class="input" name="title" placeholder="Title" ">
+            </div>
         </div>
 
-        <div>
-            <textarea name="description" placeholder="Project description"></textarea>
+
+        <div class="field">
+            <label class="label" for="description">Description</label>
+
+            <div class="control">
+                <textarea name="description" class="textarea"></textarea>
+            </div>
         </div>
 
-        <div>
-            <button type="submit">Create Project</button>
+
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button is-link">Create Project</button>
+            </div>
         </div>
     </form>
 
-</body>
-</html>
+@endsection
