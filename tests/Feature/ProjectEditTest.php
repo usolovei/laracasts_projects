@@ -19,7 +19,7 @@ class ProjectEditTest extends TestCase
         $response = $this->withHeaders([
             'Accept' => 'application/json',
             'X-Requested-With' => 'XMLHttpRequest'
-        ])->put('projects/2', ['title'=>'test', 'description'=>'this is a test', '_token' => csrf_token()]);
+        ])->put('projects/7', ['title'=>'test', 'description'=>'this is a test', '_token' => csrf_token()]);
 
         $response->assertStatus(302);
     }

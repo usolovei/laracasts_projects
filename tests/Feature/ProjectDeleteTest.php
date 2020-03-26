@@ -19,7 +19,7 @@ class ProjectDeleteTest extends TestCase
         $response = $this->withHeaders([
             'Accept' => 'application/json',
             'X-Requested-With' => 'XMLHttpRequest'
-        ])->delete('projects/3', ['_token' => csrf_token()]);
+        ])->delete('projects/6', ['_token' => csrf_token()]);
 
         $response->assertStatus(302);
 
