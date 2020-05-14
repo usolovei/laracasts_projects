@@ -47,7 +47,16 @@ class ProjectsController extends Controller
 
     public function store()
     {
+        $this->validate(request(), [
+
+            'title' => 'required',
+            'description' => 'required'
+
+        ]);
+
         Project::create(request(['title', 'description']));
-        return redirect('/projects');
+
+        return ['message' => 'Project created!'];
+//        return redirect('/projects');
     }
 }
