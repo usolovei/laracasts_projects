@@ -35,7 +35,7 @@
 
         <div class="field">
             <div class="control">
-                <button type="submit" class="button is-link is-loading" :disabled="form.errors.any()">Create Project</button>
+                <button type="submit" class="button is-link" :disabled="form.errors.any()">Create Project</button>
             </div>
         </div>
     </form>
