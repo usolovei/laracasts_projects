@@ -6,7 +6,7 @@
         <a href="/projects">List all projects</a>
     </p>
     <h1 style="margin: 20px 0; font-size: 20px"> Create a New Project</h1>
-
+    <example></example>
     <form method="POST" action="/projects" style="margin-bottom: 1em;" @submit.prevent="onSubmit" @keydown="form.errors.clear($event.target.name)">
 
         {{csrf_field()}}
@@ -41,3 +41,9 @@
     </form>
 
 @endsection
+<script>
+    import Example from "../../js/components/Example";
+    export default {
+        components: {Example}
+    }
+</script>

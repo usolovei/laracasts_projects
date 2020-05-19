@@ -1,46 +1,6 @@
-class Errors {
+import axios from 'axios';
 
-    constructor(){
-        this.errors = {};
-    }
-
-    has(field){
-
-        return this.errors.hasOwnProperty(field);
-
-    }
-
-    any(){
-
-        return Object.keys(this.errors).length > 0;
-
-    }
-
-    get(field) {
-
-        if(this.errors[field]){
-           return this.errors[field][0];
-        }
-
-    }
-
-    record(errors){
-
-        this.errors = errors.errors;
-
-    }
-
-    clear(field){
-       if (field) {
-           delete this.errors[field];
-           return;
-       }
-
-       this.errors = {};
-
-    }
-}
-
+import Errors from './Errors';
 
 class Form {
 
@@ -60,6 +20,8 @@ class Form {
 
     data() {
 
+        let data = {};
+
         for (let property in this.originalData){
             if(this.originalData.hasOwnProperty(property)) {
                 data[property] = this[property];
@@ -74,7 +36,7 @@ class Form {
 
         for (let field in this.originalData){
             if(this.originalData.hasOwnProperty(field)){
-                  this[field] = '';
+                this[field] = '';
             }
 
         }
@@ -121,32 +83,4 @@ class Form {
     }
 }
 
-new Vue({
-    el: '#app',
-
-    data: {
-
-        form: new Form({
-           title: '',
-           description: '',
-        }),
-
-
-
-    },
-
-    methods: {
-
-        onSubmit(){
-
-            this.form.submit('post', '/projects')
-
-                .then(data => console.log(data))
-
-                .catch(errors => console.log(errors));
-
-        }
-
-    }
-
-});
+export default Form;

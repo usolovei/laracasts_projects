@@ -1,32 +1,41 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import Vue from 'vue';
+import axios from 'axios';
+import Form from './core/Form';
 
-require('./bootstrap');
+import Example from './components/Example';
 
-window.Vue = require('vue');
+window.axios = axios;
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+window.Form = Form;
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-const app = new Vue({
+new Vue({
     el: '#app',
+
+    components: {
+      Example
+    },
+
+    data: {
+
+        form: new Form({
+            title: '',
+            description: '',
+        }),
+
+    },
+
+    methods: {
+
+        onSubmit(){
+
+            this.form.submit('post', '/projects')
+
+                .then(data => console.log(data))
+
+                .catch(errors => console.log(errors));
+
+        }
+
+    }
+
 });

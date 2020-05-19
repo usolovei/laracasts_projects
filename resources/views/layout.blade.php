@@ -14,8 +14,7 @@
         @yield('content')
     </div>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
-    <script src="/js/my_app.js"></script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>
