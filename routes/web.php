@@ -23,5 +23,9 @@ Route::get('custom_inputs', function(){
     return view('custom_inputs');
 });
 
+Route::get('scoped_slots', function(){
+    return view('scoped_slots');
+});
+
 Route::resource('projects', 'ProjectsController');
 
