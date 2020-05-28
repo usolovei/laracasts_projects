@@ -3,6 +3,7 @@ import axios from 'axios';
 import Form from './core/Form';
 
 import Example from './components/Example';
+import Carousel from './components/Carousel';
 
 window.axios = axios;
 
@@ -12,7 +13,8 @@ new Vue({
     el: '#app',
 
     components: {
-      Example
+      Example,
+        Carousel
     },
 
     data: {

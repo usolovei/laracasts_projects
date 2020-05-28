@@ -27,5 +27,9 @@ Route::get('scoped_slots', function(){
     return view('scoped_slots');
 });
 
+Route::get('carousel', function(){
+    return view('carousel');
+});
+
 Route::resource('projects', 'ProjectsController');
 
