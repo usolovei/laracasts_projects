@@ -20,6 +20,23 @@
     </div>
 
 
+    <div style="margin-top: 20px">
+        <input id="weekly" type="checkbox" name="lists[weekly]" value="True" />
+        <div class="label" style="width: 100px; height: 100px; background-color: #1d643b">
+            <label style="margin:auto; width:100%; height: 100%; display:block" for="weekly"></label><br>
+        </div>
+    </div>
+
+    <style>
+        input[type=checkbox] {
+            display: none;
+        }
+
+        input:checked + div {
+            background-color: #1f6fb2 !important;
+        }
+
+    </style>
 
 
 

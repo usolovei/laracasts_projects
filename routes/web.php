@@ -31,5 +31,9 @@ Route::get('carousel', function(){
     return view('carousel');
 });
 
+Route::get('faq', function(){
+   return view('faq');
+});
+
 Route::resource('projects', 'ProjectsController');
 

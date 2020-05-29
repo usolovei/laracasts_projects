@@ -4,6 +4,7 @@ import Form from './core/Form';
 
 import Example from './components/Example';
 import Carousel from './components/Carousel';
+import Accordion from './components/Accordion';
 
 window.axios = axios;
 
@@ -13,8 +14,9 @@ new Vue({
     el: '#app',
 
     components: {
-      Example,
-        Carousel
+        Example,
+        Carousel,
+        Accordion
     },
 
     data: {
